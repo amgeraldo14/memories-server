@@ -18,8 +18,6 @@ app.get('/', (req, res) => {
 })
 app.use(routes)
 
-console.log(process.env)
-
 const CONNECTION_URL = process.env.CONNECTION_URL
 const PORT = process.env.PORT || 5000
 
