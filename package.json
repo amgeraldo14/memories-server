@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "SET NODE_ENV=development & nodemon app.js"
+    "start": "SET NODE_ENV=development&nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/amgeraldo14/memories-server/issues"
   },
-  "homepage": "https://github.com/amgeraldo14/memories-server#readme"
+  "homepage": "https://github.com/amgeraldo14/memories-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
+  }
 }

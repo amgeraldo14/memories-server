@@ -1,19 +1,23 @@
 import express from 'express'
-import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cors from 'cors'
-
+import dotenv from 'dotenv'
 import routes from './routes/index.js'
 
-const app  = express()
+if (process.env.NODE_ENV === 'development') {
+  dotenv.config()
+}
 
+const app  = express()
 app.use(express.json({limit: '30mb', extended: true}))
 app.use(express.urlencoded({limit: '30mb', extended: true}))
 app.use(cors())
 
 app.use(routes)
 
-const CONNECTION_URL = 'mongodb+srv://amgeraldo14:Y9QT61rcLIVXh03C@cluster0.fnwtc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+console.log(process.env)
+
+const CONNECTION_URL = process.env.CONNECTION_URL
 const PORT = process.env.PORT || 5000
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
